@@ -1,0 +1,19 @@
+{
+  "testName": "Invalid expense category",
+  "endpoint": "/api/v1/livestock/{userId}/expenses",
+  "method": "POST",
+  "requestBody": {
+    "category": "CATTLE",
+    "expenseCategory": "INVALID",
+    "amount": 100.00,
+    "expenseDate": "2025-06-01"
+  },
+  "queryParams": null,
+  "validationRules": {
+    "expectedStatus": 400,
+    "responseFields": {
+      "error.message": "Invalid expense category: INVALID"
+    }
+  },
+  "enabled": true
+}

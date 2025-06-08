@@ -1,0 +1,18 @@
+{
+  "testName": "Get profit report",
+  "endpoint": "/api/v1/livestock/{userId}/profit",
+  "method": "GET",
+  "requestBody": null,
+  "queryParams": {
+    "category": "CATTLE",
+    "startDate": "2025-01-01",
+    "endDate": "2025-06-30"
+  },
+  "validationRules": {
+    "expectedStatus": 200,
+    "responseFields": {
+      "[0].category": "CATTLE"
+    }
+  },
+  "enabled": true
+}

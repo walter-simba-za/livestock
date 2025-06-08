@@ -1,0 +1,19 @@
+{
+  "testName": "Invalid sale price",
+  "endpoint": "/api/v1/livestock/{userId}/events",
+  "requestBody": {
+    "category": "CATTLE",
+    "eventType": "SALE",
+    "maleCount": 1,
+    "femaleCount": 0,
+    "livestockIds": ["M1"],
+    "salePrice": -100.00
+  },
+  "validationRules": {
+    "expectedStatus": 400,
+    "responseFields": {
+      "error.message": "Invalid sale price: -100.00 for SALE event"
+    }
+  },
+  "enabled": true
+}

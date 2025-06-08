@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: livestock
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+  flyway:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,info
+springdoc:
+  api-docs:
+    path: /v3/api-docs.yaml
+  swagger-ui:
+    path: /swagger-ui.html
+server:
+  port: 8080

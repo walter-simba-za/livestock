@@ -1,0 +1,14 @@
+{
+  "testName": "Missing category param",
+  "endpoint": "/api/v1/livestock/{userId}/expense-summaries",
+  "method": "GET",
+  "requestBody": null,
+  "queryParams": {},
+  "validationRules": {
+    "expectedStatus": 400,
+    "responseFields": {
+      "error.message": "Required query parameter 'category' is missing"
+    }
+  },
+  "enabled": true
+}

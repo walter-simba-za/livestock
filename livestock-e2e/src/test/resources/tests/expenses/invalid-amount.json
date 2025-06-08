@@ -1,0 +1,17 @@
+{
+  "testName": "Invalid expense amount",
+  "endpoint": "/api/v1/livestock/{userId}/expenses",
+  "requestBody": {
+    "category": "CATTLE",
+    "expenseCategory": "MEDICATION",
+    "amount": -50.00,
+    "expenseDate": "2025-06-01"
+  },
+  "validationRules": {
+    "expectedStatus": 400,
+    "responseFields": {
+      "error.message": "Invalid expense amount: -50.00"
+    }
+  },
+  "enabled": true
+}

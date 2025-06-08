@@ -1,0 +1,17 @@
+{
+  "testName": "Negative count error",
+  "endpoint": "/api/v1/livestock/{userId}/counts",
+  "requestBody": {
+    "category": "CATTLE",
+    "maleCount": -5,
+    "femaleCount": 3
+  },
+  "validationRules": {
+    "expectedStatus": 400,
+    "responseFields": {
+      "error.message": "Negative counts are not allowed"
+    }
+  },
+  "enabled": true
+}
+

@@ -1,0 +1,21 @@
+{
+  "testName": "Record MEDICATION expense",
+  "endpoint": "/api/v1/livestock/{userId}/expenses",
+  "method": "POST",
+  "requestBody": {
+    "category": "CATTLE",
+    "expenseCategory": "MEDICATION",
+    "amount": 200.00,
+    "description": "Antibiotics",
+    "expenseDate": "2025-06-01"
+  },
+  "queryParams": null,
+  "validationRules": {
+    "expectedStatus": 200,
+    "responseFields": {
+      "expenseCategory": "MEDICATION",
+      "amount": 200.00
+    }
+  },
+  "enabled": true
+}

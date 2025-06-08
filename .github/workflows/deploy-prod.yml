@@ -1,0 +1,17 @@
+name: Deploy to Fly.io Prod
+on:
+  workflow_dispatch:
+env:
+  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: Deploy App
+        run: flyctl deploy --config fly-prod.toml --remote-only
+      - name: Create Postgres
+        run: flyctl postgres create --name livestock-prod-psql --region jnb --initial-cluster-size 3 --vm-size shared-cpu-1x --volume-size 1 || true
+      - name: Attach Postgres
+        run: flyctl postgres attach livestock-prod-psql --app livestock-prod --variable-name SPRING_DATASOURCE_URL

@@ -1,0 +1,21 @@
+{
+  "testName": "ID count mismatch",
+  "endpoint": "/api/v1/livestock/{userId}/events",
+  "method": "POST",
+  "requestBody": {
+    "category": "CATTLE",
+    "eventType": "SALE",
+    "maleCount": 2,
+    "femaleCount": 0,
+    "livestockIds": ["M1"],
+    "salePrice": 1000.00
+  },
+  "queryParams": null,
+  "validationRules": {
+    "expectedStatus": 400,
+    "responseFields": {
+      "error.message": "Livestock ID count (1) does not match total count (2)"
+    }
+  },
+  "enabled": true
+}

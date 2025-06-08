@@ -1,0 +1,20 @@
+{
+  "testName": "Initialize CATTLE count",
+  "endpoint": "/api/v1/livestock/{userId}/counts",
+  "method": "POST",
+  "requestBody": {
+    "category": "CATTLE",
+    "maleCount": 20,
+    "femaleCount": 10
+  },
+  "queryParams": null,
+  "validationRules": {
+    "expectedStatus": 200,
+    "responseFields": {
+      "category": "CATTLE",
+      "maleCount": 20,
+      "femaleCount": 10
+    }
+  },
+  "enabled": true
+}

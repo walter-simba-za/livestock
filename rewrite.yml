@@ -1,0 +1,18 @@
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: co.za.zwibvafhi.livestock.GoogleStyle
+displayName: Livestock project Google code style
+recipeList:
+  - org.openrewrite.java.format.TabsAndIndents:
+      useTabCharacter: false
+      tabSize: 2
+      indentSize: 2
+      continuationIndent: 4
+  - org.openrewrite.java.format.AutoFormat:
+      lineLength: 100
+  - org.openrewrite.java.format.WrappingAndBraces:
+      lineLength: 100
+      wrapMethodParameters: false
+  - org.openrewrite.java.RemoveUnusedImports
+  - org.openrewrite.java.OrderImports:
+      style: google

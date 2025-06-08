@@ -1,0 +1,23 @@
+{
+  "testName": "Record SALE event",
+  "endpoint": "/api/v1/livestock/{userId}/events",
+  "method": "POST",
+  "requestBody": {
+    "category": "CATTLE",
+    "eventType": "SALE",
+    "maleCount": 2,
+    "femaleCount": 0,
+    "livestockIds": ["M1", "M2"],
+    "salePrice": 1000.00
+  },
+  "queryParams": null,
+  "validationRules": {
+    "expectedStatus": 200,
+    "responseFields": {
+      "eventType": "SALE",
+      "maleCount": 2,
+      "salePrice": 1000.00
+    }
+  },
+  "enabled": true
+}

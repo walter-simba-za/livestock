@@ -1,0 +1,14 @@
+{
+  "testName": "Get expense summaries",
+  "endpoint": "/api/v1/livestock/{userId}/expense-summaries",
+  "method": "GET",
+  "requestBody": null,
+  "queryParams": {
+    "category": "CATTLE"
+  },
+  "validationRules": {
+    "expectedStatus": 200,
+    "responseFields": {}
+  },
+  "enabled": true
+}

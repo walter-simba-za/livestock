@@ -1,0 +1,19 @@
+{
+  "testName": "Invalid livestock IDs",
+  "endpoint": "/api/v1/livestock/{userId}/events",
+  "requestBody": {
+    "category": "CATTLE",
+    "eventType": "SALE",
+    "maleCount": 1,
+    "femaleCount": 0,
+    "livestockIds": ["INVALID"],
+    "salePrice": 500.00
+  },
+  "validationRules": {
+    "expectedStatus": 400,
+    "responseFields": {
+      "error.message": "Invalid livestock IDs: Some IDs not found"
+    }
+  },
+  "enabled": true
+}

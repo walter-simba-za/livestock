@@ -1,0 +1,16 @@
+{
+  "testName": "Count already exists",
+  "endpoint": "/api/v1/livestock/{userId}/counts",
+  "requestBody": {
+    "category": "CATTLE",
+    "maleCount": 10,
+    "femaleCount": 5
+  },
+  "validationRules": {
+    "expectedStatus": 409,
+    "responseFields": {
+      "error.message": "Livestock count already exists for user 1 and category CATTLE"
+    }
+  },
+  "enabled": true
+}

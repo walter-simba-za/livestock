@@ -1,0 +1,18 @@
+{
+  "testName": "Zero count error",
+  "endpoint": "/api/v1/livestock/{userId}/counts",
+  "method": "POST",
+  "requestBody": {
+    "category": "CATTLE",
+    "maleCount": 0,
+    "femaleCount": 0
+  },
+  "queryParams": null,
+  "validationRules": {
+    "expectedStatus": 400,
+    "responseFields": {
+      "error.message": "Total count must be positive"
+    }
+  },
+  "enabled": true
+}

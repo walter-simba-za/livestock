@@ -1,0 +1,16 @@
+{
+  "testName": "Invalid user ID",
+  "endpoint": "/api/v1/livestock/{userId}/counts",
+  "requestBody": {
+    "category": "CATTLE",
+    "maleCount": 10,
+    "femaleCount": 5
+  },
+  "validationRules": {
+    "expectedStatus": 404,
+    "responseFields": {
+      "error.message": "User with ID 999 not found"
+    }
+  },
+  "enabled": true
+}

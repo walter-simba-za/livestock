@@ -1,0 +1,17 @@
+{
+  "testName": "Invalid event type",
+  "endpoint": "/api/v1/livestock/{userId}/events",
+  "requestBody": {
+    "category": "CATTLE",
+    "eventType": "INVALID",
+    "maleCount": 1,
+    "femaleCount": 0
+  },
+  "validationRules": {
+    "expectedStatus": 400,
+    "responseFields": {
+      "error.message": "Invalid event type: INVALID"
+    }
+  },
+  "enabled": true
+}

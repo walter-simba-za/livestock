@@ -1,0 +1,17 @@
+{
+  "testName": "Invalid date format",
+  "endpoint": "/api/v1/livestock/{userId}/profit",
+  "method": "GET",
+  "requestBody": null,
+  "queryParams": {
+    "category": "CATTLE",
+    "startDate": "2025/01/01"
+  },
+  "validationRules": {
+    "expectedStatus": 400,
+    "responseFields": {
+      "error.message": "Invalid date format for startDate: 2025/01/01"
+    }
+  },
+  "enabled": true
+}
