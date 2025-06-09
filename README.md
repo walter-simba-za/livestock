@@ -35,6 +35,30 @@ ensure modularity, maintainability, and selective dependency inclusion. Below is
 - **Migration Readiness**: Framework-light
   modules (`livestock-api`, `livestock-common`, `livestock-core`) simplify future migrations.
 
+## Features
+
+The Livestock Management System provides a robust API for managing livestock-related data. Below are
+the key features, grouped by functionality, supporting livestock categories: `GOAT`, `SHEEP`, and
+`CATTLE`.
+
+#### Livestock Counts
+- **Initialize Counts**: Set initial livestock counts for a user and category with male and female numbers.
+- **Retrieve Counts**: Fetch the current livestock count for a user and specified category.
+
+#### Events
+- **Record Events**: Log events like `BIRTH`, `DEATH`, `LOST`, `SLAUGHTER`, `SALE`, or `PURCHASE`, including male/female counts, optional costs (for `PURCHASE`, `BIRTH`), sale prices (required for `SALE`), and livestock IDs (for `SLAUGHTER`, `SALE`).
+- **Retrieve Event History**: Get a history of events for a user and category, optionally filtered by event type.
+
+#### Expenses
+- **Record Expenses**: Log expenses (e.g., `PURCHASE`, `FEED`, `VACCINATION`, `MEDICATION`, `LABOUR`) with amount, description, and date.
+- **Retrieve Expenses**: Fetch paginated expenses for a user and category, optionally filtered by expense category (e.g., `MEDICATION`) and date range, with pagination support (default 20 per page, max 100).
+
+#### Expense Summaries
+- **Retrieve Summaries**: Get total amount and count of expenses by category (e.g., `FEED`, `LABOUR`) for a user and livestock category, optionally filtered by date range.
+
+#### Profit Reports
+- **Retrieve Reports**: Generate a profit report for a user and category, showing total revenue, expenses, and net profit, optionally filtered by date range.
+
 ## Developer Setup
 
 ### Prerequisites
